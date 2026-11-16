@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Estrutura da página: <head> (configurações) + <body> (header, main, footer) -->
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SneakerStore - Home</title>
+    <!-- Aplica o tema salvo (claro/escuro) antes de desenhar a página, para não "piscar" -->
+    <script>try{var t=localStorage.getItem('tema');if(t)document.documentElement.dataset.tema=t;}catch(e){}</script>
+    <!-- Liga o arquivo de estilos (cores, layout) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- CABEÇALHO: logo + menu (igual em todas as páginas) -->
+    <header>
+        <a href="index.html" class="logo">👟 SneakerStore</a>
+        <!-- Botão hambúrguer: só aparece no celular (o JS abre/fecha o menu) -->
+        <button type="button" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+            <span></span><span></span><span></span>
+        </button>
+        <!-- O link com class="active" é a página atual (fica laranja) -->
+        <nav id="menu-principal">
+            <a href="index.html" class="active" aria-current="page">Home</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="carrinho.html">Carrinho (<span id="cart-count">0</span>)</a>
+            <a href="contato.html">Contato</a>
+            <a href="mensagens.php">Painel Admin</a>
+            <button type="button" class="tema-toggle" id="tema-toggle" aria-label="Alternar tema">🌙</button>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO que muda em cada página -->
+    <main>
+        <section class="hero">
+            <h1>Os Melhores Tênis para o Seu Estilo</h1>
+            <p>Conforto, performance e estilo único em um só lugar.</p>
+            <a href="produtos.html" class="btn">Ver Catálogo</a>
+        </section>
+
+        <h2>Destaques da Semana</h2>
+        <!-- Os cards são criados pelo JavaScript a partir da lista PRODUTOS -->
+        <div class="produtos-grid" id="grid-destaques"></div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>👟 SneakerStore</h4>
+                <p>Conforto, performance e estilo único em um só lugar.</p>
+            </div>
+            <div>
+                <h4>Navegue</h4>
+                <a href="index.html">Home</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="carrinho.html">Carrinho</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div>
+                <h4>Atendimento</h4>
+                <p>Seg a Sex, das 9h às 18h</p>
+                <a href="contato.html">Fale conosco</a>
+            </div>
+            <div>
+                <h4>Pagamento</h4>
+                <div class="pagamentos">
+                    <span>Pix</span><span>Cartão</span><span>Boleto</span>
+                </div>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2026 SneakerStore - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Liga o JavaScript (por último, para a página já estar carregada) -->
+    <script src="js/script.js"></script>
+</body>
+</html>
